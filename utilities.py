@@ -465,32 +465,28 @@ def RK4(x0,y_x0,v_x0,h,f,g,analy,xn):
         y=y_x0
         x=x0
         v=v_x0
-        while i<250:
-            if x==xn:
-                a=x
-                b=y
-            else:
-
-                X[w][i]=x
-                Y[w][i]=y
-                z[w][i]=x
-                k1y=k*f(x,y,v)
-                k1v=k*g(x,y,v)
-                k2y=k*f(x+k/2,y+k/2,v+k1v/2)
-                k2v=k*g(x+k/2,y+k/2,v+k1v/2)
-                k3y=k*f(x+k/2,y+k/2,v+k2v/2)
-                k3v=k*g(x+k/2,y+k/2,v+k2v/2)
-                k4y=k*f(x+k/2,y+k/2,v+k3v/2)
-                k4v=k*g(x+k/2,y+k/2,v+k3v/2)
-                z_xn=analy(x)
-                Z[w][i]=z_xn
-                i=i+1
-                y=y+1/6*(k1y+(2*k2y)+(2*k3y)+k4y)
-                v=v+1/6*(k1v+(2*k2v)+(2*k3v)+k4v)
-                x=x+k
+        while i<250 :
+            X[w][i]=x
+            Y[w][i]=y
+            z[w][i]=x
+            k1y=k*f(x,y,v)
+            k1v=k*g(x,y,v)
+            k2y=k*f(x+k/2,y+k/2,v+k1v/2)
+            k2v=k*g(x+k/2,y+k/2,v+k1v/2)
+            k3y=k*f(x+k/2,y+k/2,v+k2v/2)
+            k3v=k*g(x+k/2,y+k/2,v+k2v/2)
+            k4y=k*f(x+k/2,y+k/2,v+k3v/2)
+            k4v=k*g(x+k/2,y+k/2,v+k3v/2)
+            z_xn=analy(x)
+            Z[w][i]=z_xn
+            i=i+1
+            y=y+1/6*(k1y+(2*k2y)+(2*k3y)+k4y)
+            v=v+1/6*(k1v+(2*k2v)+(2*k3v)+k4v)
+            x=x+k
 
         i=0
         w=w+1
+
     j=0
     for d in h:
         plt.plot(X[j],Y[j],"--",label=str(d)+'solution')
@@ -503,6 +499,5 @@ def RK4(x0,y_x0,v_x0,h,f,g,analy,xn):
     plt.ylim([-10,100])
     plt.legend()
     plt.show()
-    #return(a,b)
 
 
