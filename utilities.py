@@ -506,25 +506,3 @@ def RK4(x0,y_x0,v_x0,h,f,g,analy,xn):
     #return(a,b)
 
 
-def shooting_method(x0,a,xn,b,func,funct_g,func3,h,z):
-        # x,y = RK4(x0,a,z,h,func,funct_g,func3,xn)
-        # #coorecting slope 1 to ve less than 0
-        # while (y,5) >b):
-        #     print('The guess a smaller slope')
-        #     g_1 = float(input('Guess_1 the slope at y({}):'.format(a)))
-        #     M,N1 = Runge_Kutta4_method_2_O(u,N,a,b,y_a,g_1)
-        # if round(N1[-1] - y_b,5)!= 0:
-        #     #defining slope 2
-        #     g_2 = float(input('Guess_2 the slope at y({}):'.format(a)))
-        #     M,N2 = Runge_Kutta4_method_2_O(u,N,a,b,y_a,g_2)
-        #     #correcting slope to be greater than 0
-        #     while (round(N2[-1],5)<y_b):
-        #         print('The guess a larger slope')
-        #         g_2 = float(input('Guess_2 the slope at y({}):'.format(a)))
-        #         M,N2 = Runge_Kutta4_method_2_O(u,N,a,b,y_a,g_2)
-        #     #lagrange_interpolation
-        #     l = g_1 + (g_2 - g_1)*(y_b-N1[-1])/(N2[-1]-N1[-1])
-        #     print('Using langrange extrapolation, the slope at y({}) is {}\n'.format(a,l))
-        #     M,N1 = Runge_Kutta4_method_2_O(u,N,a,b,y_a,l)
-        # return(M,N1)
-        pass
